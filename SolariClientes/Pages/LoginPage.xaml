@@ -1,0 +1,22 @@
+﻿<Page
+    x:Class="SolariClientes.Pages.LoginPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SolariClientes.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <StackPanel Orientation="Vertical" Padding="20" VerticalAlignment="Center">
+            <TextBlock Text="Login" FontSize="36" Margin="4" TextAlignment="Center"/>
+
+            <TextBox x:Name="edUsuario" PlaceholderText="Usuário" Margin="0,40,0,0" HorizontalAlignment="Center" Width="300"/>
+            <PasswordBox x:Name="edSenha" PlaceholderText="Senha" Margin="0,10,0,0" HorizontalAlignment="Center" Width="300"/>
+            
+            <Button x:Name="btLogin" Content="Login" HorizontalAlignment="Center" Margin="0,20,0,0" Width="200" Background="DarkOrange" Click="btLogin_Click"/>
+            <ProgressRing x:Name="progressRing" Foreground="#ff6d00"/>
+        </StackPanel>
+    </Grid>
+</Page>
