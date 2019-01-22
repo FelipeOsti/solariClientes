@@ -52,10 +52,10 @@ namespace SolariClientes.Pages
             {
                 App.bboLogado = true;
                 MainPage.current.Navegar(typeof(MeusDadosPage));
+                MainPage.current.LoginRealizado();
             }
             else
             {
-
                 var dialog = new MessageDialog("Usuário e/ou senha incorretos!");
                 await dialog.ShowAsync();                
             }

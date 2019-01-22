@@ -96,6 +96,7 @@ namespace SolariClientes.Pages
                 if (plano.FL_PLANO.Equals("A")) sflPlano = "Anual";
                 cBox.Items.Add(plano.ID_PLANO.ToString()+" - "+sflPlano + " - R$ " + plano.VL_PLANO.ToString());
             }
+            cBox.SelectedIndex = 0;
  
             cBox.HorizontalAlignment = HorizontalAlignment.Stretch;
             cBox.Margin = new Thickness(10, 10, 10, 0);
@@ -145,6 +146,11 @@ namespace SolariClientes.Pages
             {
                 throw;
             }
+        }
+
+        private void BtTemPlano_Click(object sender, RoutedEventArgs e)
+        {
+            MainPage.current.Navegar(typeof(Pages.LoginPage));
         }
     }
 }

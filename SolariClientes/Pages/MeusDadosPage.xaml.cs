@@ -46,8 +46,7 @@ namespace SolariClientes.Pages
 
             ValorImplantacao.IsReadOnly = true;
             ValorImplantacao.Text = "R$ 1.000,00";
-            NumeroParcelas.IsReadOnly = false;
-            NumeroParcelas.Text = "1";
+            NumeroParcelas.SelectedIndex = 0;
 
             var dialog = new MessageDialog("Informe seus dados e confirme seu cadastro para começar a utilizar o sistema SOLARI!");
             await dialog.ShowAsync();
@@ -58,7 +57,6 @@ namespace SolariClientes.Pages
             ClienteInternoLogic cliLogic = new ClienteInternoLogic();
             var cliente = await cliLogic.GetClienteInterno(App.nidClienteInterno);
             edLogin.IsReadOnly = true;
-            NumeroParcelas.IsReadOnly = true;
 
             edLogin.Text = cliente.CD_LOGIN;
             edNome.Text = cliente.DS_NOME;
@@ -76,8 +74,7 @@ namespace SolariClientes.Pages
             email.Text = cliente.DS_EMAIL;
 
             ValorImplantacao.Text = cliente.VL_IMPLANTACAO.ToString();
-            NumeroParcelas.Text = cliente.NR_PARCELASIMPLANT.ToString();
-                
+            NumeroParcelas.SelectedIndex = cliente.NR_PARCELASIMPLANT-1;
 
             await GetPlanosAsync(cliente.ID_PLANO);
 
@@ -106,7 +103,7 @@ namespace SolariClientes.Pages
                     DS_SENHA = RequestWS.CriptografaSHA256(edSenha.Password),
                     ID_PLANO = App.planoSelecionado > 0 ? App.planoSelecionado : App.PlanoCliente.ID_PLANO,
                     NR_DIAVENCIMENTO = Convert.ToInt32(diaPagamento.Text),
-                    NR_PARCELASIMPLANT = Convert.ToInt32(NumeroParcelas.Text),
+                    NR_PARCELASIMPLANT = Convert.ToInt32(NumeroParcelas.SelectedIndex+1),
                     VL_IMPLANTACAO = Convert.ToDouble(ValorImplantacao.Text.Replace("R$", "").Trim()),
                     BO_ADMIN = "F",
                     DT_CADASTRO = DateTime.Now.Date.ToString(),

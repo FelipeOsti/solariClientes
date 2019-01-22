@@ -9,6 +9,7 @@ using System.Runtime.Serialization;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Core;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -48,6 +49,12 @@ namespace SolariClientes
             AppFrame.Navigate(objeto);
         }
 
+        public void LoginRealizado()
+        {
+            AppNavView.MenuItems.Remove(AppNavView.MenuItems[0]);
+            AppNavView.MenuItems.Remove(AppNavView.MenuItems[0]);
+        }
+
         private void MainPage_BackRequested(object sender, BackRequestedEventArgs e)
         {
             if (AppFrame.CanGoBack)
@@ -62,12 +69,23 @@ namespace SolariClientes
             AppNavView.SelectedItem = AppNavView.MenuItems.OfType<NavigationViewItem>().Where(item => item.Tag.ToString() == pageName).First();
         }
 
-        private void AppNavView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
+        private async void AppNavView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
         {
-            var invokedMenuItem = sender.MenuItems.OfType<NavigationViewItem>().Where(item => item.Content.ToString() == args.InvokedItem.ToString()).First();
-            var pageTypeName = invokedMenuItem.Tag.ToString();
-            var pageType = Assembly.GetExecutingAssembly().GetType($"SolariClientes.{PageNamespace}.{pageTypeName}");
-            AppFrame.Navigate(pageType);
+            try
+            {
+                if(args.InvokedItem.GetType() != typeof(System.String))
+                    if (((ContentControl)args.InvokedItem).Content.ToString() == "Configurações") return;
+
+                var invokedMenuItem = sender.MenuItems.OfType<NavigationViewItem>().Where(item => item.Content.ToString() == args.InvokedItem.ToString()).First();
+                var pageTypeName = invokedMenuItem.Tag.ToString();
+                var pageType = Assembly.GetExecutingAssembly().GetType($"SolariClientes.{PageNamespace}.{pageTypeName}");
+                AppFrame.Navigate(pageType);
+            }
+            catch (Exception ex)
+            {
+                var dialog = new MessageDialog("Falha ao abrir tela - "+ex.Message);
+                await dialog.ShowAsync();
+            }
         }
     }
 }

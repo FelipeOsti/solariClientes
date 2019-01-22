@@ -35,18 +35,18 @@
                     </Grid>
                     <TextBlock Text="E-mail"/>
                     <TextBox x:Name="email" HorizontalContentAlignment="Left" HorizontalAlignment="Stretch"/>
+                    <TextBlock Text="UF"/>
+                    <TextBox x:Name="uf" HorizontalContentAlignment="Left" HorizontalAlignment="Stretch"/>
                     <TextBlock Text="Cidade"/>
                     <TextBox x:Name="cidade" HorizontalContentAlignment="Left" HorizontalAlignment="Stretch"/>
+                    <TextBlock Text="CEP"/>
+                    <TextBox x:Name="cep" HorizontalContentAlignment="Left" HorizontalAlignment="Stretch"/>
                     <TextBlock Text="Endereço"/>
                     <TextBox x:Name="endereco" HorizontalContentAlignment="Left" HorizontalAlignment="Stretch"/>
                     <TextBlock Text="Número"/>
                     <TextBox x:Name="numero" HorizontalContentAlignment="Left" HorizontalAlignment="Stretch"/>
                     <TextBlock Text="Bairro"/>
                     <TextBox x:Name="bairro" HorizontalContentAlignment="Left" HorizontalAlignment="Stretch"/>
-                    <TextBlock Text="UF"/>
-                    <TextBox x:Name="uf" HorizontalContentAlignment="Left" HorizontalAlignment="Stretch"/>
-                    <TextBlock Text="CEP"/>
-                    <TextBox x:Name="cep" HorizontalContentAlignment="Left" HorizontalAlignment="Stretch"/>
                     <TextBlock Text="CPF"/>
                     <TextBox x:Name="cpf" HorizontalContentAlignment="Left" HorizontalAlignment="Stretch"/>
                     <TextBlock Text="CNPJ"/>
@@ -77,13 +77,24 @@
                         <TextBlock Grid.Row="0" Grid.Column="0" Text="Valor da Implantação"/>
                         <TextBlock Grid.Row="0" Grid.Column="1" Margin="20,0,0,0" Text="Número de Parcelas"/>
                         <TextBox Grid.Row="1" Grid.Column="0" x:Name="ValorImplantacao" IsReadOnly="True"/>
-                        <TextBox Grid.Row="1" Grid.Column="1" Margin="20,0,0,0" x:Name="NumeroParcelas" IsReadOnly="True"/>
+                        <ComboBox Grid.Row="1" Grid.Column="1" Margin="20,0,0,0" x:Name="NumeroParcelas" HorizontalAlignment="Stretch">
+                            <ComboBoxItem Name="cbp1">1</ComboBoxItem>
+                            <ComboBoxItem Name="cbp2">2</ComboBoxItem>
+                            <ComboBoxItem Name="cbp3">3</ComboBoxItem>
+                            <ComboBoxItem Name="cbp4">4</ComboBoxItem>
+                            <ComboBoxItem Name="cbp5">5</ComboBoxItem>
+                            <ComboBoxItem Name="cbp6">6</ComboBoxItem>
+                            <ComboBoxItem Name="cbp7">7</ComboBoxItem>
+                            <ComboBoxItem Name="cbp8">8</ComboBoxItem>
+                            <ComboBoxItem Name="cbp9">9</ComboBoxItem>
+                            <ComboBoxItem Name="cbp10">10</ComboBoxItem>
+                        </ComboBox>
                     </Grid>
                     <TextBlock Text="Melhor dia para pagamento das parcelas e mensalidade"/>
                     <TextBox x:Name="diaPagamento" HorizontalContentAlignment="Left" HorizontalAlignment="Stretch" IsReadOnly="True"/>
 
                 </StackPanel>
-                <Button x:Name="btConfirma" Click="btConfirma_Click" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,50,50" VerticalAlignment="Bottom" Content="Confirmar"/>
+                <Button x:Name="btConfirma" Click="btConfirma_Click" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,50,0" VerticalAlignment="Bottom" Content="Confirmar"/>
             </Grid>
         </StackPanel>
     </ScrollViewer>

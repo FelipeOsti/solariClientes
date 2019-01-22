@@ -31,7 +31,12 @@
             </NavigationViewItem>
         </NavigationView.MenuItems>
 
-        <Frame x:Name="AppFrame"/>
+      <Frame x:Name="AppFrame" >
+        <Frame.ContentTransitions>
+          <TransitionCollection>
+            <NavigationThemeTransition/>
+          </TransitionCollection>
+        </Frame.ContentTransitions>
+      </Frame>
     </NavigationView>
-
 </Page>

@@ -12,14 +12,20 @@
         <ListView x:Name="lstView" RequestedTheme="Light">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Orientation="Horizontal" Height="50">
-                        <TextBlock Text="{Binding DS_DOCUM}" MinWidth="300" VerticalAlignment="Center"/>
-                        <TextBlock Text="{Binding DS_PARCELA}" MinWidth="150" VerticalAlignment="Center"/>
-                        <TextBlock Text="{Binding DT_VENCIMENTO}" MinWidth="150" VerticalAlignment="Center"/>
-                        <Button x:Name="btPagamento" Click="btPagamento_Click">
+                    <Grid Margin="10" HorizontalAlignment="Stretch">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="300" />
+                            <ColumnDefinition Width="150" />
+                            <ColumnDefinition Width="150" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{Binding DS_DOCUM}" VerticalAlignment="Center"/>
+                        <TextBlock Grid.Column="1" Text="{Binding DS_PARCELA}" VerticalAlignment="Center"/>
+                        <TextBlock Grid.Column="2" Text="{Binding DT_VENCIMENTO}"  VerticalAlignment="Center"/>
+                        <Button Grid.Column="3" x:Name="btPagamento" Click="btPagamento_Click" VerticalAlignment="Center" HorizontalAlignment="Right">
                             <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE8C7;"/>
                         </Button>
-                    </StackPanel>
+                    </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

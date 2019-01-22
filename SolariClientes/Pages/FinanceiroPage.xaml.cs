@@ -79,10 +79,10 @@ namespace SolariClientes.Pages
             {
                 new Models.PagSeguro.ProdutoModel()
                 {
-                    descricao = App.PlanoCliente.DS_PLANO,
-                    id = App.PlanoCliente.ID_PLANO.ToString(),
+                    descricao = item.DS_DOCUM,
+                    id = item.ID_DOCUM.ToString(),
                     qtde = 1,
-                    unitario = (decimal)App.PlanoCliente.VL_PLANO
+                    unitario = (decimal)item.VL_PARCELA
                 }
             };
             

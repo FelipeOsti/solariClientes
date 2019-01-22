@@ -9,7 +9,8 @@
 
     <ScrollViewer>
         <StackPanel Padding="15">
-            <TextBlock Text="ESCOLHA SEU PLANO" FontSize="48" Foreground="#ff6d00" Margin="0,50,0,0" FontWeight="Bold" FontFamily="Comic Sans MS" HorizontalAlignment="Center"/>
+            <TextBlock Text="ESCOLHA SEU PLANO" FontSize="48" Foreground="#ff6d00" Margin="0,20,0,0" FontWeight="Bold" FontFamily="Comic Sans MS" HorizontalAlignment="Center"/>
+
             <Grid CornerRadius="15" Padding="5" Background="White" Margin="0,50,0,0" x:Name="gridDados">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -17,10 +18,10 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-
-            
             </Grid>
-            <ProgressRing x:Name="progressRing" Margin="50,50,50,50" Foreground="#ff6d00" Height="100" Width="100"/>
+
+            <Button x:Name="btTemPlano" Content="Já possuo um Plano" Background="Transparent" Foreground="Gray" Click="BtTemPlano_Click"/>
+            <ProgressRing x:Name="progressRing" Margin="50,50,50,50" Foreground="#ff6d00" Height="50" Width="50"/>
         </StackPanel>
     </ScrollViewer>
 </Page>
