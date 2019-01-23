@@ -2,6 +2,7 @@
 using SolariClientes.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,7 @@ namespace SolariClientes.Logic
 {
     class FinanceiroLogic
     {
-        public async Task<List<CR_PARCELAModel>> GetDadosFinanceiro(bool bboPendente)
+        public async Task<ObservableCollection<CR_PARCELAModel>> GetDadosFinanceiro(bool bboPendente)
         {
             try
             {
@@ -21,7 +22,7 @@ namespace SolariClientes.Logic
 
                 var docum =  (List<CR_DOCUMModel>)JsonConvert.DeserializeObject(json, typeof(List<CR_DOCUMModel>));
 
-                var parcelas = new List<CR_PARCELAModel>();
+                var parcelas = new ObservableCollection<CR_PARCELAModel>();
 
                 foreach (var doc in docum)
                 {

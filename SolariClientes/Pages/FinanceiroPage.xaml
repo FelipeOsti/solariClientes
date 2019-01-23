@@ -25,6 +25,7 @@
                         <Button Grid.Column="3" x:Name="btPagamento" Click="btPagamento_Click" VerticalAlignment="Center" HorizontalAlignment="Right">
                             <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE8C7;"/>
                         </Button>
+                        <ProgressRing Foreground="#ff6d00" IsActive="{Binding bboProcessando}"/>
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>

@@ -16,7 +16,7 @@
             <PasswordBox x:Name="edSenha" PlaceholderText="Senha" Margin="0,10,0,0" HorizontalAlignment="Center" Width="300"/>
             
             <Button x:Name="btLogin" Content="Login" HorizontalAlignment="Center" Margin="0,20,0,0" Width="200" Background="DarkOrange" Click="btLogin_Click"/>
-            <ProgressRing x:Name="progressRing" Foreground="#ff6d00"/>
+            <ProgressRing Margin="5" x:Name="progressRing" Foreground="#ff6d00"/>
         </StackPanel>
     </Grid>
 </Page>

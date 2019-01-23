@@ -20,5 +20,6 @@ namespace SolariClientes.Models
         }
         public double VL_PAGO { get; set; }        
         public string DT_VENCIMENTO { get; set; }
+        public bool bboProcessando { get; set; }
     }
 }

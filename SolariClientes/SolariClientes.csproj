@@ -97,6 +97,7 @@
     </Compile>
     <Compile Include="Logic\ClienteInternoLogic.cs" />
     <Compile Include="Logic\FinanceiroLogic.cs" />
+    <Compile Include="Logic\LicencaLogic.cs" />
     <Compile Include="Logic\PagSeguroLogic.cs" />
     <Compile Include="Logic\PlanosLogic.cs" />
     <Compile Include="Logic\RequestWS.cs" />
@@ -119,6 +120,9 @@
     </Compile>
     <Compile Include="Pages\InicioPage.xaml.cs">
       <DependentUpon>InicioPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\LicencasPage.xaml.cs">
+      <DependentUpon>LicencasPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
@@ -158,6 +162,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\InicioPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\LicencasPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

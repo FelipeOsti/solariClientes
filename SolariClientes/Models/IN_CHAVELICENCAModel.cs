@@ -11,6 +11,10 @@ namespace SolariClientes.Models
         public long ID_CHAVELICENCA { get; set; }
         public long ID_CLIENTEINTERNO { get; set; }
         public string DS_CHAVE { get; set; }
-        public string DT_VALIDADE { get; set; }
+        public DateTime DT_VALIDADE { get; set; }
+        public string ddtValidade { get {
+                return DT_VALIDADE.Day + "/" + DT_VALIDADE.Month + "/" + DT_VALIDADE.Year;
+            }
+        }
     }
 }

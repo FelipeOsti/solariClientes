@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    <NavigationView x:Name="AppNavView" IsPaneOpen="False" ItemInvoked="AppNavView_ItemInvoked" IsBackButtonVisible="Collapsed">
+    <NavigationView x:Name="AppNavView" IsPaneOpen="False" ItemInvoked="AppNavView_ItemInvoked" IsBackButtonVisible="Collapsed" >
         <NavigationView.MenuItems>
             <NavigationViewItem Content="Inicio" Tag="InicioPage">
                 <NavigationViewItem.Icon>
@@ -29,6 +29,11 @@
                     <FontIcon Glyph="&#xE8C7;"/>
                 </NavigationViewItem.Icon>
             </NavigationViewItem>
+          <NavigationViewItem Content="Licenciamento" Tag="LicencasPage">
+            <NavigationViewItem.Icon>
+              <FontIcon Glyph="&#xE779;"/>
+            </NavigationViewItem.Icon>
+          </NavigationViewItem>
         </NavigationView.MenuItems>
 
       <Frame x:Name="AppFrame" >
